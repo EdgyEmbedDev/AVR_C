@@ -32,7 +32,7 @@ function(avr_add_executable NAME)
   add_executable(${FILE_ELF} ${ARGN})
 
   set_target_properties(${FILE_ELF} PROPERTIES
-    COMPILE_FLAGS "-mmcu=${AVR_MCU} -D${AVR_MCU_DEFINE} -DF_CPU=${MCU_SPEED} -fpack-struct -fshort-enums -Wall -Werror -pedantic -pedantic-errors -funsigned-char -funsigned-bitfields -ffunction-sections -Os -save-temps"
+    COMPILE_FLAGS "-mmcu=${AVR_MCU} -D${AVR_MCU_DEFINE} -DF_CPU=${MCU_SPEED} -fpack-struct -fshort-enums -Wall -pedantic -pedantic-errors -funsigned-char -funsigned-bitfields -ffunction-sections -Os -save-temps"
     LINK_FLAGS "-mmcu=${AVR_MCU} -Wl,--gc-sections -mrelax -Wl,-Map,${FILE_MAP}"
   )
 
